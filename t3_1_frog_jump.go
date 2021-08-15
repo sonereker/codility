@@ -2,6 +2,7 @@ package main
 
 import "math"
 
+//FrogJump O(N)
 func FrogJump(X int, Y int, D int) int {
 	return int(Round(float64(Y-X) / float64(D)))
 }
