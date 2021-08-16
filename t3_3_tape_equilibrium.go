@@ -5,7 +5,7 @@ import (
 	"sort"
 )
 
-//TapeEquilibrium O(N * N)
+//TapeEquilibrium O(N)
 func TapeEquilibrium(A []int) int {
 	if len(A) == 1 {
 		return 0
