@@ -9,6 +9,8 @@ func TestTapeEquilibrium(t *testing.T) {
 		res  int
 	}{
 		{"Single Element", []int{2}, 0},
+		{"Single Negative", []int{-5}, 0},
+		{"Single Boundary", []int{-5, 1}, 6},
 		{"Two Elements", []int{2, 5}, 3},
 		{"{3, 1, 2, 4, 3}", []int{3, 1, 2, 4, 3}, 1},
 		{"{3, 1, 2, 4, 3}", []int{-3, -1, -2, -4, -3}, 1},
