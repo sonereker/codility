@@ -20,5 +20,4 @@ func TestMaxCounters(t *testing.T) {
 			t.Errorf("Expected %d, got %d", test.res, result)
 		}
 	}
-
 }
