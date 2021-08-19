@@ -2,6 +2,7 @@ package main
 
 import "sort"
 
+//PermCheck O(N) or O(N * log(N))
 func PermCheck(A []int) int {
 	sort.Ints(A)
 
