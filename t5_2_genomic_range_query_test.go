@@ -13,6 +13,7 @@ func TestGenomicRangeQuery(t *testing.T) {
 		res []int
 	}{
 		{S: "CAGCCTA", P: []int{2, 5, 0}, Q: []int{4, 5, 6}, res: []int{2, 4, 1}},
+		{S: "TC", P: []int{0, 0, 1}, Q: []int{0, 1, 1}, res: []int{4, 2, 2}},
 	}
 
 	for _, test := range tests {

@@ -11,16 +11,19 @@ func GenomicRangeQuery(S string, P []int, Q []int) []int {
 	dna["G"] = 3
 	dna["T"] = 4
 
-	for i := 0; i <= len(P)-1; i++ {
+	var stringAsArray []int
+	for i := 0; i < len(S); i++ {
+		stringAsArray = append(stringAsArray, dna[string(S[i])])
+	}
+
+	for i := 0; i < len(P); i++ {
 		start := P[i]
 		end := Q[i]
 
-		var r []int
-		for k := start; k <= end; k++ {
-			r = append(r, dna[string(S[k])])
-		}
-		sort.Ints(r)
-		result = append(result, r[0])
+		impactFactors := make([]int, len(stringAsArray[start:end+1]))
+		copy(impactFactors, stringAsArray[start:end+1])
+		sort.Ints(impactFactors)
+		result = append(result, impactFactors[0])
 	}
 
 	return result
