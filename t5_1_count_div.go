@@ -1,7 +1,6 @@
 package main
 
-import "math"
-
+//CountDiv O(1)
 func CountDiv(A int, B int, K int) int {
 	if A == B {
 		if B%K == 0 {
@@ -11,19 +10,11 @@ func CountDiv(A int, B int, K int) int {
 		}
 	}
 
-	res := int(Round(float64(B-A) / float64(K)))
+	res := B/K - A/K
 
-	if A == 0 {
+	if A%K == 0 {
 		res++
 	}
 
 	return res
-}
-
-func Round(x float64) float64 {
-	t := math.Trunc(x)
-	if math.Abs(x-t) >= 0.5 {
-		return t + math.Copysign(1, x)
-	}
-	return t
 }
